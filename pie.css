@@ -1,11 +1,11 @@
-@include-when-export url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Source+Sans+Pro&display=swap');
+/* @include-when-export url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Source+Sans+Pro&display=swap'); */
 
-@font-face {
-  font-family: 'Source Sans Pro';
-  src: url('pie/source-sans-pro-v21.woff2') format('woff2'), url('pie/source-sans-pro-v21.woff') format('woff');
-}
+/* @font-face {
+  font-family: 'AlibabaPuHuiTi';
+  src: url('font/AlibabaPuHuiTi-2-55-Regular.woff2') format('woff2'), url('pie/AlibabaPuHuiTi-2-55-Regular.woff') format('woff');
+} */
 
-@font-face {
+/* @font-face {
   font-family: 'Fira Code';
   src: url('pie/FiraCode-Light.woff2') format('woff2'), url('pie/FiraCode-Light.woff') format('woff');
   font-weight: 300;
@@ -27,7 +27,7 @@
   font-family: 'Fira Code';
   src: url('pie/FiraCode-Bold.woff2') format('woff2'), url('pie/FiraCode-Bold.woff') format('woff');
   font-weight: 700;
-}
+} */
 
 :root {
   --primary-color: #f22f27;
@@ -70,8 +70,8 @@
   --main-10: #590009;
 
   /* 字体 */
-  --font-normal: 'Source Sans Pro', 'MiSans', '等距更纱黑体 SC', 'Microsoft YaHei', 'Helvetica Neue', Arial, sans-serif;
-  --font-code: 'Fira Code', Monaco, Consolas, 'MiSans', '等距更纱黑体 SC', 'Microsoft YaHei', sans-serif;
+  --font-normal: 'Microsoft YaHei', 'JetBrains Mono', 'Source Sans Pro', 'MiSans', '等距更纱黑体 SC','Helvetica Neue', Arial, sans-serif;
+  --font-code: 'JetBrains Mono', Monaco, Consolas, 'MiSans', '等距更纱黑体 SC', 'Microsoft YaHei', sans-serif;
 }
 
 html {
@@ -109,6 +109,18 @@ body {
 
 #write ul {
   line-height: 2rem;
+}
+
+#write ol>li,
+#write ul>li {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+#write ol>li>*,
+#write ul>li>* {
+    color: #333;
+    font-weight: normal;
 }
 
 #write > ul:first-child,
@@ -213,7 +225,7 @@ h1::after {
   height: 2px;
   margin: 0.2em auto 0;
   content: '';
-  border-bottom: 2px dashed var(--main-6);
+  border-bottom: 2px solid var(--main-6);
 }
 
 h2 {
@@ -449,11 +461,13 @@ table tr td:last-child {
 }
 
 #write strong {
-  padding: 0 1px;
+  padding: 0.1em;
+  color: #dc3545;
 }
 
 #write em {
   padding: 0 5px 0 2px;
+  color: #ff3502;
 }
 
 #write .CodeMirror-gutters {
@@ -510,6 +524,14 @@ tt {
   border: 1px solid var(--main-4);
   border-radius: 4px;
 }
+
+/* 内联公式 */
+
+[md-inline='inline_math'] {
+  color: #dc3545;
+  font-size: 100%;
+}
+
 
 /* heighlight. */
 #write mark {
@@ -858,3 +880,35 @@ footer {
   color: white !important;
   text-decoration: underline;
 }
+
+@media print {
+  .typora-export * {
+      -webkit-print-color-adjust: exact;
+  }
+  html {
+      font-size: 16px!important;
+  }
+  body {
+      /* font-family: 'Source Han SerifCN', Georgia, Times, 'SimSun', serif!important; */
+      /* font-size: 16px!important; */
+      font-family: Times, 'SimSun', serif!important;
+      color: #000000!important;
+  }
+  p {
+      color: #000000!important;
+  }
+  a {
+      color: var(--main-6)important;
+      text-decoration: none;
+      border-bottom: 1px solid var(--main-6);
+      /* border-bottom: 1px solid blue!important; */
+  }
+  table,
+  pre {
+      page-break-inside: avoid;
+  }
+  pre {
+      word-wrap: break-word;
+  }
+}
+
