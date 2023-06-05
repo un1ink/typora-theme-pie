@@ -561,18 +561,33 @@ padding: 1px 2px;
 }
 
 /* 任务列表小方框 */
+/* #write .md-task-list-item{
+    counter-reset: md-task-list-item
+}
+
+#write .md-task-list-item :before{
+    counter-increment: md-task-list-item;
+    content: counter(md-task-list-item) ". "
+} */
+
+
+
 .md-task-list-item > input {
-margin-top: 0.3rem;
+/* margin-top: 0.35rem; */
 margin-left: -1.3em;
+/* line-height: 2; */
+vertical-align: middle;
 -webkit-appearance: none;
 }
 
 .md-task-list-item > input::before {
 display: inline-block;
-width: 0.875rem;
-height: 0.875rem;
-margin-top: -0.4rem;
-font-size: 0.8rem;
+width: 1rem;
+height: 1rem;
+margin-top: -10%;
+/* font-size: 0.8rem; */
+/* line-height: 2; */
+vertical-align: middle;
 color: var(--mid-1);
 text-align: center;
 vertical-align: middle;
@@ -783,19 +798,19 @@ border-left: 4px solid var(--main-6);
 #write, .sidebar-content,.md-toc-content{
     counter-reset: h1
 }
- 
+    
 #write h1, .outline-h1, .md-toc-item.md-toc-h1 {
     counter-reset: h2
 }
- 
+    
 #write h2, .outline-h2, .md-toc-item.md-toc-h2 {
     counter-reset: h3
 }
- 
+    
 #write h3, .outline-h3, .md-toc-item.md-toc-h3 {
     counter-reset: h4
 }
- 
+    
 #write h4, .outline-h4, .md-toc-item.md-toc-h4 {
     counter-reset: h5
 }
@@ -808,7 +823,7 @@ border-left: 4px solid var(--main-6);
     counter-increment: h1;
     content: counter(h1) ". "
 }
- 
+    
 /* 二级标题 */
 #write h2:before,
 .outline-h2>.outline-item>.outline-label:before,
